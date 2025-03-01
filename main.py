@@ -1,4 +1,5 @@
-text = "Hello World!"
+text = ""
+# text = "Hello World!"
 
 
 def print_my_text(mytext: str):
