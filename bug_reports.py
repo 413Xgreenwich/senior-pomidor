@@ -37,7 +37,8 @@ def btend():
     exit()
 
 cmd_dict = {
-    "help": bthelp
+    "help": bthelp,
+    "end": btend
 }
 
 
@@ -45,6 +46,6 @@ cmd = input("Добро пожаловать в баг-трекер! Введи�
 
 
 while True:
-    print(cmd)
+
     cmd_dict[cmd]()
     cmd = input("BT $ ")
