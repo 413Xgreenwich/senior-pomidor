@@ -35,9 +35,7 @@ def bterror(param=None):
             "Некорректный статус бага. Доступные статусы: Trivial, Low, High, Critical, Blocker"
         )
     elif param == 5:
-        print(
-            "Некорректный id бага. id бага может быть только числом. Посмотрите доступные баги по команде 'list'"
-        )
+        print("Некорректный id бага. Посмотрите доступные баги по команде 'list'")
     elif param == 6:
         print("В баг-трекере нет багов")
     elif param == 7:
@@ -132,6 +130,11 @@ def btchange(param=None):
     elif param == None:
         bterror(8)
         return None
+    elif len(param.split()) >= 2:
+        bterror(3)
+        return None
+    elif not param.isdigit():
+        bterror(9)
     elif int(param) not in bugs.keys():
         bterror(5)
     else:
