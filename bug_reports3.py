@@ -5,6 +5,8 @@ critical_list = ["Trivial", "Low", "High", "Critical", "Blocker"]
 counter = 1
 bugs = {}
 bugsall = {}
+hello = "Добро пожаловать в баг-трекер! Введите 'help' для вывода списка команд"
+bye = "Знание - сила. Береги его как следует."
 
 doc = """
 help         - вывести список команд
@@ -56,6 +58,7 @@ def bterror(param=None):
 
 def btexit(param=None):
     if param == None:
+        print(bye)
         exit()
     else:
         bterror(2)
@@ -226,7 +229,7 @@ cmd_dict = {
     "del": btdel,
 }
 
-print("Добро пожаловать в баг-трекер! Введите 'help' для вывода списка команд")
+print(hello)
 
 while True:
 
