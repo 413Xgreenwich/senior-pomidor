@@ -225,11 +225,8 @@ cmd_dict = {
     "all": btall,
     "sort": btsort,
     "tros": bttros,
-    "error": bterror,
     "init": btinit,
-    "new": btnew,
     "change": btchange,
-    "del": btdel,
 }
 
 print(hello)
