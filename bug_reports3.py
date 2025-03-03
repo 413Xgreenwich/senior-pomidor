@@ -189,8 +189,8 @@ def btinit(param=None):
         bterror(11)
         return None
     elif param == None:
-        print("Создан начальный список из 5 багов:")
-        for _ in range(5):
+        print("Создан начальный список из 10 багов:")
+        for _ in range(10):
             param_for_new_bug = random.choice(critical_list)
             btnew(param_for_new_bug)
             print(param_for_new_bug)
