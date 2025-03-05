@@ -50,6 +50,8 @@ def bterror(param=None):
         print(
             "Команда init может не может быть применена, если ранее были созданы баги"
         )
+    elif param == 12:
+        print("Укажите id бага, который нужно удалить")
     else:
         print("Ошибка. Список команд - 'help'")
 
@@ -88,7 +90,10 @@ def btdel(param):
     if not bugs:
         bterror(6)
         return None
-    if not param.isdigit():
+    elif not param:
+        bterror(12)
+        return None
+    elif not param.isdigit():
         bterror(5)
         return None
     param = int(param)
