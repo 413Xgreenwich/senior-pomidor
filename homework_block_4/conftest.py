@@ -35,3 +35,22 @@ def booking_data():
         "bookingdates": {"checkin": "2013-02-23", "checkout": "2014-10-23"},
         "additionalneeds": "Breakfast",
     }
+
+
+@pytest.fixture()
+def new_booking_data():
+    return {
+        "firstname": "Alex",
+        "lastname": "Greenwich",
+        "totalprice": faker.random_int(min=100, max=100_000),
+        "depositpaid": True,
+        "bookingdates": {"checkin": "2013-02-23", "checkout": "2014-10-23"},
+        "additionalneeds": "Breakfast",
+    }
+
+
+@pytest.fixture()
+def partial_booking_data():
+    return {
+        "additionalneeds": "Lunch",
+    }
