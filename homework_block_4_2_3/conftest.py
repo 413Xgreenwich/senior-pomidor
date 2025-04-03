@@ -32,3 +32,8 @@ def item_data():
         "title": fake.word().capitalize(),
         "description": fake.sentence(nb_words=10),
     }
+
+
+@pytest.fixture()
+def new_item_data():
+    return {"title": "New title", "description": "Task failed successfully"}

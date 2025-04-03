@@ -5,7 +5,7 @@ from constants import BASE_URL
 class TestItems:
     endpoint = f"{BASE_URL}/items/"
 
-    def test_create_item(self, item_data, auth_session):
+    def test_create_item(self, item_data, new_item_data, auth_session):
         response = auth_session.post(self.endpoint, json=item_data)
         assert response.status_code in (
             200,
@@ -18,6 +18,16 @@ class TestItems:
         assert data.get("title") == item_data["title"]
 
         self.created_item_id = item_id
+
+        change_item = auth_session.put(f"{self.endpoint}{item_id}", json=new_item_data)
+        assert (
+            change_item.status_code == 200
+        ), f"Response: {response.status_code}, {response.text}"
+
+        delete_item = auth_session.delete(f"{self.endpoint}{item_id}")
+        assert (
+            delete_item.status_code == 200
+        ), f"Response: {response.status_code}, {response.text}"
 
     def test_get_items(self, auth_session):
         response = auth_session.get(self.endpoint)
