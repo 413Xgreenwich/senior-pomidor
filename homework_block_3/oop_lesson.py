@@ -1,3 +1,6 @@
+import pytest
+
+
 class BankAccount:
 
     def __init__(self, owner, balance=0):
@@ -20,6 +23,7 @@ class BankAccount:
 
     def get_balance(self):
         print(f"Баланс счёта {self.owner}: {self.__balance}")
+        return self.__balance
 
 
 class SavingsAccount(BankAccount):
@@ -63,3 +67,7 @@ account1.deposit(500)
 account1.withdraw(100)
 account1.apply_interest()
 account1.get_balance()
+
+
+def test_balance(BankAccount):
+    assert BankAccount.get_balance() > 0
