@@ -68,6 +68,3 @@ account1.withdraw(100)
 account1.apply_interest()
 account1.get_balance()
 
-
-def test_balance(BankAccount):
-    assert BankAccount.get_balance() > 0
