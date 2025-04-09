@@ -6,4 +6,4 @@ def test_balance_after_deposit():
     account = BankAccount("Александр")
     account.deposit(100)
     balance = account.get_balance()
-    assert balance > 0
+    assert balance > 0, "Баланс аккаунта неположительный"
