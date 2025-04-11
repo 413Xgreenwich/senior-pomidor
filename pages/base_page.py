@@ -35,7 +35,7 @@ class BasePage:
         expect(self.page.locator("body")).to_contain_text(text)
 
     def assert_text_in_element(self, selector, text):
-        expect(self.page.locator(selector)).to_have_text()
+        expect(self.page.locator(selector)).to_have_text(text)
 
     def assert_input_value(self, selector, expected_value):
         expect(self.page.locator(selector)).to_have_value(expected_value)
