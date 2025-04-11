@@ -1,7 +1,10 @@
 from pages.login_page import LoginPage
 from pages.inventory_page import InventoryPage
 from pages.checkout_page import CheckoutPage
+import allure
 
+
+@allure.title("Проверка критического пути проекта pages")
 def test_add_items_and_checkout(browser):
     page = browser.new_page()
     login_page = LoginPage(page)
